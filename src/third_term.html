@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Third Term | Continuous Probability Distributions</title>
+  <style>
+    body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; background: #f8fafc; color: #0f172a; }
+    header { background: #6d28d9; color: #fff; padding: 26px 20px; }
+    header a { color: #ddd6fe; text-decoration: none; font-weight: 600; }
+    main { max-width: 900px; margin: 0 auto; padding: 26px 20px 50px; }
+    h1 { margin-top: 8px; }
+    section { background: #fff; border-radius: 14px; padding: 18px 16px; box-shadow: 0 8px 20px rgba(0,0,0,0.08); border: 1px solid #e2e8f0; margin-bottom: 16px; }
+    h2 { color: #6d28d9; margin-top: 0; }
+    ul { margin: 10px 0 0 20px; }
+    .example { background: #f3e8ff; padding: 12px; border-radius: 10px; border: 1px solid #e9d5ff; }
+  </style>
+</head>
+<body>
+  <header>
+    <a href="../index.html">&larr; Back to main</a>
+    <h1>Continuous Probability Distributions</h1>
+    <p>Variables that can take infinitely many values in intervals; probabilities come from areas under density curves.</p>
+  </header>
+
+  <main>
+    <section>
+      <h2>Key Concepts</h2>
+      <ul>
+        <li><strong>PDF (f(x)):</strong> Probability density; total area under curve is 1.</li>
+        <li><strong>CDF (F(x)):</strong> Probability X ≤ x, found by integrating the PDF.</li>
+        <li><strong>Expected value:</strong> E[X] = ∫ x·f(x) dx; <strong>Variance:</strong> Var(X) = ∫ (x−μ)^2 f(x) dx.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Common Distributions</h2>
+      <ul>
+        <li><strong>Normal(μ, σ²):</strong> Bell-shaped; standardize with Z = (X−μ)/σ for table lookup.</li>
+        <li><strong>Exponential(λ):</strong> Time between Poisson events; PDF λe^{−λx} for x ≥ 0; memoryless.</li>
+        <li><strong>Uniform(a, b):</strong> Constant density 1/(b−a) on [a, b]; mean (a+b)/2.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Example Calculation</h2>
+      <div class="example">
+        <strong>Normal tail:</strong> If X ~ Normal(50, 9), then Z = (55−50)/3 ≈ 1.67. Using a Z-table, P(X ≥ 55) ≈ 0.0475.
+      </div>
+      <div class="example" style="margin-top:10px;">
+        <strong>Exponential probability:</strong> If service times are Exponential(λ=0.5), then P(X ≤ 2) = 1 − e^{−0.5·2} ≈ 0.632.
+      </div>
+    </section>
+  </main>
+</body>
+</html>
