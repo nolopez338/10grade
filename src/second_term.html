@@ -74,7 +74,42 @@
       <h2>Decision Trees & EMV</h2>
       <p>Decision trees show decisions (squares) and chance nodes (circles). The expected monetary value (EMV) at a chance node is the probability-weighted average of payoffs.</p>
       <div class="example">
-        <strong>Example:</strong> Choose between a safe project ($40k guaranteed) and a risky project (40% chance of $120k, 60% chance of $10k). Using LaTeX, \(\text{EMV}_{\text{risky}} = 0.4\times 120\text{k} + 0.6\times 10\text{k} = \$54\text{k} > \$40\text{k}\), so risky dominates by EMV.
+        <strong>Example:</strong> Choose between a safe project ($45k guaranteed) and a risky project with three demand levels. The payoff table summarizes payoffs (in $000s) and state probabilities:
+        <table style="width:100%; margin: 10px 0; border-collapse: collapse; text-align: center;">
+          <thead>
+            <tr style="background:#ccfbf1;">
+              <th style="border: 1px solid #94a3b8; padding: 6px;">State of Nature</th>
+              <th style="border: 1px solid #94a3b8; padding: 6px;">Probability</th>
+              <th style="border: 1px solid #94a3b8; padding: 6px;">Safe Project</th>
+              <th style="border: 1px solid #94a3b8; padding: 6px;">Risky Project</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td style="border: 1px solid #cbd5e1; padding: 6px;">High demand</td>
+              <td style="border: 1px solid #cbd5e1; padding: 6px;">0.30</td>
+              <td style="border: 1px solid #cbd5e1; padding: 6px;">45</td>
+              <td style="border: 1px solid #cbd5e1; padding: 6px;">150</td>
+            </tr>
+            <tr>
+              <td style="border: 1px solid #cbd5e1; padding: 6px;">Moderate demand</td>
+              <td style="border: 1px solid #cbd5e1; padding: 6px;">0.50</td>
+              <td style="border: 1px solid #cbd5e1; padding: 6px;">45</td>
+              <td style="border: 1px solid #cbd5e1; padding: 6px;">70</td>
+            </tr>
+            <tr>
+              <td style="border: 1px solid #cbd5e1; padding: 6px;">Low demand</td>
+              <td style="border: 1px solid #cbd5e1; padding: 6px;">0.20</td>
+              <td style="border: 1px solid #cbd5e1; padding: 6px;">45</td>
+              <td style="border: 1px solid #cbd5e1; padding: 6px;">5</td>
+            </tr>
+          </tbody>
+        </table>
+        <div style="display: flex; flex-direction: column; gap: 8px; align-items: center;">
+          <span style="white-space: nowrap; font-weight: 600;">\(\text{EMV}_{\text{risky}} = (0.30 \times 150) + (0.50 \times 70) + (0.20 \times 5) = 81\text{k}\)</span>
+          <span style="white-space: nowrap; font-weight: 600;">\(\text{EMV}_{\text{safe}} = 45\text{k}\)</span>
+          <span>By EMV, the risky project (81k) dominates the safe project (45k). Maximax also selects the risky project because its best-case payoff (150k) exceeds the safe project's best-case payoff (45k).</span>
+        </div>
       </div>
     </section>
 
