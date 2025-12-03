@@ -5,39 +5,23 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Second Term | Decision Rules with Data</title>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" async></script>
-
-  <style>
-    body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; background: #f8fafc; color: #0f172a; }
-    header { background: #0f766e; color: #fff; padding: 26px 20px; }
-    header a { color: #a5f3fc; text-decoration: none; font-weight: 600; }
-    main { max-width: 900px; margin: 0 auto; padding: 26px 20px 50px; }
-    h1 { margin-top: 8px; }
-    section { background: #fff; border-radius: 14px; padding: 18px 16px; box-shadow: 0 8px 20px rgba(0,0,0,0.08); border: 1px solid #e2e8f0; margin-bottom: 16px; }
-    h2 { color: #0f766e; margin-top: 0; }
-    ul { margin: 10px 0 0 20px; }
-    .example { background: #ecfeff; padding: 12px; border-radius: 10px; border: 1px solid #99f6e4; }
-    .support-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 12px; padding: 0; margin: 10px 0 0; list-style: none; }
-    .resource-card { border: 1px solid #e2e8f0; border-radius: 12px; padding: 14px; background: linear-gradient(135deg, #f8fbff, #ecfeff); box-shadow: 0 8px 20px rgba(0,0,0,0.06); }
-    .resource-card h3 { margin: 0 0 6px; color: #0f766e; font-size: 1.05rem; }
-    .resource-card p { margin: 0; color: #334155; }
-    .resource-card a { color: #0ea5e9; text-decoration: none; font-weight: 600; }
-    .resource-card a:hover { text-decoration: underline; }
-    html { scroll-behavior: smooth; }
-  </style>
+  <link rel="stylesheet" href="styles/base.css">
+  <link rel="stylesheet" href="styles/themes.css">
+  <link rel="stylesheet" href="styles/layout.css">
+  <link rel="stylesheet" href="styles/components.css">
 </head>
 
-<body>
+<body class="theme-second">
 
-<header>
+<header class="site-header">
   <a href="../index.html">&larr; Back to main</a>
   <h1>Analysis of Decisions</h1>
   <p>Decision-making with data, payoff tables, and rules such as EMV, Maximin, and Maximax.</p>
 </header>
 
-<main>
+<main class="term-layout">
 
-  <!-- TABLE OF CONTENTS -->
-  <section id="table-of-contents">
+  <section id="table-of-contents" class="content-card">
     <h2>Table of Contents</h2>
     <ul>
       <li><a href="#conceptual-referents">Conceptual Referents</a></li>
@@ -49,8 +33,7 @@
     </ul>
   </section>
 
-  <!-- CONCEPTUAL REFERENTS -->
-  <section id="conceptual-referents">
+  <section id="conceptual-referents" class="content-card">
     <h2>Conceptual Referents</h2>
     <ul>
       <li>Random variable</li>
@@ -62,8 +45,7 @@
     </ul>
   </section>
 
-  <!-- ACHIEVEMENT CRITERIA -->
-  <section id="achievement-criteria">
+  <section id="achievement-criteria" class="content-card">
     <h2>Achievement Criteria</h2>
     <ol>
       <li>Describes the way a problem can be formulated for optimal decision making.</li>
@@ -79,8 +61,7 @@
     </ol>
   </section>
 
-  <!-- DECISION PROCESS -->
-  <section id="decision-process">
+  <section id="decision-process" class="content-card">
     <h2>Decision Process</h2>
     <ul>
       <li><strong>Define alternatives:</strong> List feasible actions.</li>
@@ -90,13 +71,10 @@
     </ul>
   </section>
 
-  <!-- FORMULAS -->
-  <section id="formulas-section">
+  <section id="formulas-section" class="content-card">
     <h2>Formulas Used in This Topic</h2>
 
-    <div class="example" style="display: grid; gap: 14px;">
-
-      <!-- 1 -->
+    <div class="example example-stack">
       <p><strong>1. Expected Value of a Discrete Random Variable</strong></p>
       <p>
         \[
@@ -110,7 +88,6 @@
         <strong>Context:</strong> Represents the long-run average outcome under repeated identical conditions.
       </p>
 
-      <!-- 2 -->
       <p><strong>2. Variance of a Discrete Random Variable</strong></p>
       <p>
         \[
@@ -124,7 +101,6 @@
         <strong>Context:</strong> Measures dispersion and quantifies risk or volatility.
       </p>
 
-      <!-- 3 -->
       <p><strong>3. Expected Monetary Value (EMV)</strong></p>
       <p>
         \[
@@ -139,7 +115,6 @@
         <strong>Context:</strong> Represents the average monetary performance of a strategy under uncertainty.
       </p>
 
-      <!-- 4 -->
       <p><strong>4. Maximin Criterion</strong></p>
       <p>
         \[
@@ -153,7 +128,6 @@
         <strong>Context:</strong> Represents a conservative decision maker seeking safety.
       </p>
 
-      <!-- 5 -->
       <p><strong>5. Maximax Criterion</strong></p>
       <p>
         \[
@@ -164,12 +138,10 @@
         • Outer max: selects the alternative with the largest best-case payoff.<br>
         <strong>Context:</strong> Represents an optimistic decision maker seeking maximum possible gain.
       </p>
-
     </div>
   </section>
 
-  <!-- EXAMPLE 1 -->
-  <section id="example-1">
+  <section id="example-1" class="content-card">
     <h2>Example 1</h2>
     <p>Use a payoff table to compare options across the same states of nature. EMV multiplies each payoff by its probability and adds the results. Maximax focuses on the highest possible payoff, while Maximin focuses on the strongest worst-case payoff.</p>
 
@@ -177,45 +149,43 @@
       <strong>Example with diverging recommendations:</strong>
       A firm has three technology strategies under three demand scenarios (payoffs in $000s).
 
-      <table style="width:100%; margin: 10px 0; border-collapse: collapse; text-align: center;">
+      <table class="data-table">
         <thead>
-          <tr style="background:#ccfbf1;">
-            <th style="border: 1px solid #94a3b8; padding: 6px;">State of Nature</th>
-            <th style="border: 1px solid #94a3b8; padding: 6px;">Probability</th>
-            <th style="border: 1px solid #94a3b8; padding: 6px;">Innovate (A)</th>
-            <th style="border: 1px solid #94a3b8; padding: 6px;">Improve (B)</th>
-            <th style="border: 1px solid #94a3b8; padding: 6px;">License (C)</th>
+          <tr>
+            <th>State of Nature</th>
+            <th>Probability</th>
+            <th>Innovate (A)</th>
+            <th>Improve (B)</th>
+            <th>License (C)</th>
           </tr>
         </thead>
 
         <tbody>
           <tr>
-            <td style="border: 1px solid #cbd5e1; padding: 6px;">High demand</td>
-            <td style="border: 1px solid #cbd5e1; padding: 6px;">0.30</td>
-            <td style="border: 1px solid #cbd5e1; padding: 6px;">150</td>
-            <td style="border: 1px solid #cbd5e1; padding: 6px;">110</td>
-            <td style="border: 1px solid #cbd5e1; padding: 6px;">70</td>
+            <td>High demand</td>
+            <td>0.30</td>
+            <td>150</td>
+            <td>110</td>
+            <td>70</td>
           </tr>
           <tr>
-            <td style="border: 1px solid #cbd5e1; padding: 6px;">Moderate demand</td>
-            <td style="border: 1px solid #cbd5e1; padding: 6px;">0.40</td>
-            <td style="border: 1px solid #cbd5e1; padding: 6px;">80</td>
-            <td style="border: 1px solid #cbd5e1; padding: 6px;">90</td>
-            <td style="border: 1px solid #cbd5e1; padding: 6px;">70</td>
+            <td>Moderate demand</td>
+            <td>0.40</td>
+            <td>80</td>
+            <td>90</td>
+            <td>70</td>
           </tr>
           <tr>
-            <td style="border: 1px solid #cbd5e1; padding: 6px;">Low demand</td>
-            <td style="border: 1px solid #cbd5e1; padding: 6px;">0.30</td>
-            <td style="border: 1px solid #cbd5e1; padding: 6px;">-20</td>
-            <td style="border: 1px solid #cbd5e1; padding: 6px;">40</td>
-            <td style="border: 1px solid #cbd5e1; padding: 6px;">60</td>
+            <td>Low demand</td>
+            <td>0.30</td>
+            <td>-20</td>
+            <td>40</td>
+            <td>60</td>
           </tr>
         </tbody>
       </table>
 
-      <div style="display: flex; flex-direction: column; gap: 14px;">
-
-        <!-- EMV -->
+      <div class="stacked-text">
         <span><strong>EMV calculations:</strong>
           \[
           EMV_A = 0.30(150) + 0.40(80) + 0.30(-20) = 71k
@@ -229,7 +199,6 @@
           EMV recommends <em>Improve (B)</em>.
         </span>
 
-        <!-- MAXIMAX FIRST -->
         <span><strong>Maximax (step-by-step reasoning):</strong><br>
           The Maximax rule selects the option with the highest possible payoff.
           <br><br>
@@ -248,7 +217,6 @@
           <strong>Conclusion:</strong> Maximax recommends <em>Innovate (A)</em>.
         </span>
 
-        <!-- MAXIMIN SECOND -->
         <span><strong>Maximin (step-by-step reasoning):</strong><br>
           The Maximin rule selects the option with the strongest worst-case payoff.
           <br><br>
@@ -272,9 +240,7 @@
     </div>
   </section>
 
-
-  <!-- SUPPORT MATERIALS -->
-  <section id="support-materials">
+  <section id="support-materials" class="content-card support-section">
     <h2>Support Materials</h2>
     <ul class="support-grid">
 

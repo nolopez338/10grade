@@ -7,77 +7,24 @@
 
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" async></script>
 
-  <style>
-    body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      margin: 0;
-      background: #f8fafc;
-      color: #0f172a;
-    }
-    header {
-      background: #0f766e;
-      color: #fff;
-      padding: 26px 20px;
-    }
-    header a {
-      color: #a5f3fc;
-      text-decoration: none;
-      font-weight: 600;
-    }
-    main {
-      max-width: 900px;
-      margin: 0 auto;
-      padding: 26px 20px 50px;
-    }
-    section {
-      background: #fff;
-      border-radius: 14px;
-      padding: 18px 16px;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.08);
-      border: 1px solid #e2e8f0;
-      margin-bottom: 16px;
-    }
-    h2 {
-      color: #0f766e;
-      margin-top: 0;
-    }
-    .example {
-      background: #ecfeff;
-      padding: 12px;
-      border-radius: 10px;
-      border: 1px solid #99f6e4;
-    }
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      margin: 14px 0;
-      text-align: center;
-    }
-    th, td {
-      border: 1px solid #cbd5e1;
-      padding: 6px;
-    }
-    th {
-      background: #ccfbf1;
-    }
-    html {
-      scroll-behavior: smooth;
-    }
-  </style>
+  <link rel="stylesheet" href="../styles/base.css">
+  <link rel="stylesheet" href="../styles/themes.css">
+  <link rel="stylesheet" href="../styles/layout.css">
+  <link rel="stylesheet" href="../styles/components.css">
 </head>
 
-<body>
+<body class="theme-second">
 
-<header>
+<header class="site-header">
   <a href="../second_term.html">&larr; Back to Second Term</a>
   <h1>Practice Activity 1</h1>
   <p>Problems and detailed worked solutions on Expected Value, Maximin, and Maximax.</p>
 </header>
 
-<main>
+<main class="term-layout">
 
   <!-- TABLE OF CONTENTS -->
-  <section>
+  <section class="content-card">
     <h2>Contents</h2>
     <ul>
       <li><a href="#problem1">Problem 1 — Local Café Investment</a></li>
@@ -90,131 +37,131 @@
   </section>
 
   <!-- PROBLEM 1 -->
-  <section id="problem1">
+  <section id="problem1" class="content-card">
     <h2>Problem 1 — Local Café Investment</h2>
 
     <div class="example">
-      A small café is considering whether to introduce a new line of artisan desserts.  
+      A small café is considering whether to introduce a new line of artisan desserts.
       The owner has two options:
 
       <br><br>
-      • <strong>Launch the dessert line</strong>, in which case profits depend on demand:  
-      &nbsp;&nbsp;– High demand → 40 thousand USD  
-      &nbsp;&nbsp;– Low demand → 10 thousand USD  
+      • <strong>Launch the dessert line</strong>, in which case profits depend on demand:
+      &nbsp;&nbsp;– High demand → 40 thousand USD
+      &nbsp;&nbsp;– Low demand → 10 thousand USD
 
       <br>
       • <strong>Keep the current menu</strong>, yielding 25 thousand USD regardless of demand.
 
       <br><br>
-      Market research indicates:  
-      • Probability of high demand: 0.60  
-      • Probability of low demand: 0.40  
+      Market research indicates:
+      • Probability of high demand: 0.60
+      • Probability of low demand: 0.40
 
       <br><br>
-      <strong>Question:</strong> Make a decision on the best option based on three perspectives:  
+      <strong>Question:</strong> Make a decision on the best option based on three perspectives:
       safe behavior (Maximin), balanced behavior (Expected Value), and risky behavior (Maximax).
     </div>
   </section>
 
   <!-- PROBLEM 2 -->
-  <section id="problem2">
+  <section id="problem2" class="content-card">
     <h2>Problem 2 — Green Energy Production Mix</h2>
 
     <div class="example">
-      A renewable-energy company is evaluating its energy production strategy for the coming year.  
+      A renewable-energy company is evaluating its energy production strategy for the coming year.
       Three weather conditions are possible:
 
       <br><br>
-      • Windy  
-      • Sunny  
-      • Cloudy  
+      • Windy
+      • Sunny
+      • Cloudy
 
       <br><br>
-      The company is comparing three strategies:  
+      The company is comparing three strategies:
 
-      1. Build wind turbines  
-      2. Build solar farms  
-      3. Build a balanced hybrid system  
+      1. Build wind turbines
+      2. Build solar farms
+      3. Build a balanced hybrid system
 
       <br><br>
       Expected profits (in million USD):
 
       <br>
-      • Wind turbines → 85 (Windy), 40 (Sunny), 25 (Cloudy)  
-      • Solar farms → 30 (Windy), 90 (Sunny), 20 (Cloudy)  
+      • Wind turbines → 85 (Windy), 40 (Sunny), 25 (Cloudy)
+      • Solar farms → 30 (Windy), 90 (Sunny), 20 (Cloudy)
       • Hybrid system → 60 (Windy), 60 (Sunny), 55 (Cloudy)
 
       <br><br>
-      Weather probabilities:  
-      • Windy → 0.30  
-      • Sunny → 0.50  
-      • Cloudy → 0.20  
+      Weather probabilities:
+      • Windy → 0.30
+      • Sunny → 0.50
+      • Cloudy → 0.20
 
       <br><br>
-      <strong>Question:</strong> Make a decision on the best strategy based on three perspectives:  
+      <strong>Question:</strong> Make a decision on the best strategy based on three perspectives:
       safe behavior (Maximin), balanced behavior (Expected Value), and risky behavior (Maximax).
     </div>
   </section>
 
   <!-- PROBLEM 3 -->
-  <section id="problem3">
+  <section id="problem3" class="content-card">
     <h2>Problem 3 — Global Shipping Network Design</h2>
 
     <div class="example">
-      A multinational logistics firm must redesign its global shipping network for the next five years.  
+      A multinational logistics firm must redesign its global shipping network for the next five years.
       The firm is considering three network configurations:
 
       <br><br>
-      1. <strong>Centralized</strong>: A single mega-hub in East Asia  
-      2. <strong>Regional</strong>: Three hubs (Americas, Europe, Asia)  
-      3. <strong>Adaptive AI–Driven</strong>: Dynamic routing using machine-learning models  
+      1. <strong>Centralized</strong>: A single mega-hub in East Asia
+      2. <strong>Regional</strong>: Three hubs (Americas, Europe, Asia)
+      3. <strong>Adaptive AI–Driven</strong>: Dynamic routing using machine-learning models
 
       <br><br>
       Three volatility scenarios are possible:
 
       <br>
-      • Low Volatility — stable trade flows  
-      • Medium Volatility — moderate regional disruptions  
+      • Low Volatility — stable trade flows
+      • Medium Volatility — moderate regional disruptions
       • High Volatility — significant unpredictability
 
       <br><br>
       Expected profits (million USD):
 
       <br>
-      • Centralized → 210 (Low), 130 (Medium), –40 (High)  
-      • Regional → 180 (Low), 160 (Medium), 70 (High)  
+      • Centralized → 210 (Low), 130 (Medium), –40 (High)
+      • Regional → 180 (Low), 160 (Medium), 70 (High)
       • AI–Driven → 150 (Low), 175 (Medium), 140 (High)
 
       <br><br>
       Scenario probabilities:
 
-      • Low → 0.25  
-      • Medium → 0.45  
-      • High → 0.30  
+      • Low → 0.25
+      • Medium → 0.45
+      • High → 0.30
 
       <br><br>
-      <strong>Question:</strong> Make a decision on the best configuration based on three perspectives:  
+      <strong>Question:</strong> Make a decision on the best configuration based on three perspectives:
       safe behavior (Maximin), balanced behavior (Expected Value), and risky behavior (Maximax).
     </div>
   </section>
 
   <!-- SOLUTION 1 -->
-  <section id="solution1">
+  <section id="solution1" class="content-card">
     <h2>Solution 1 — Local Café Investment</h2>
 
     <p><strong>Restated Problem</strong></p>
     <div class="example">
-      A small café may launch a new dessert line.  
-      Payoffs:  
-      • Launch: 40k (high demand), 10k (low demand)  
-      • Keep menu: 25k (high demand), 25k (low demand)  
-      Probabilities: 0.60 (high), 0.40 (low).  
+      A small café may launch a new dessert line.
+      Payoffs:
+      • Launch: 40k (high demand), 10k (low demand)
+      • Keep menu: 25k (high demand), 25k (low demand)
+      Probabilities: 0.60 (high), 0.40 (low).
 
       Question: Make a decision on the best option for safe behavior (Maximin), balanced behavior (Expected Value), and risky behavior (Maximax).
     </div>
 
     <p><strong>Payoff Table</strong></p>
-    <table>
+    <table class="data-table">
       <tr><th>Alternative</th><th>High demand</th><th>Low demand</th></tr>
       <tr><td>Launch desserts</td><td>40</td><td>10</td></tr>
       <tr><td>Keep menu</td><td>25</td><td>25</td></tr>
@@ -230,7 +177,7 @@
     EV_{\text{Keep}} = 0.60(25) + 0.40(25) = 15 + 10 = 25
     \]
 
-    Balanced behavior (Expected Value) recommends:  
+    Balanced behavior (Expected Value) recommends:
     Launch desserts.
 
     <p><strong>Maximin (safe behavior)</strong></p>
@@ -245,7 +192,7 @@
     \min_i \text{Payoff}(\text{Keep}, S_i) = \min\{25, 25\} = 25
     \]
 
-    The safe behavior (Maximin) chooses the option whose worst payoff is largest:  
+    The safe behavior (Maximin) chooses the option whose worst payoff is largest:
     Safe behavior recommends: Keep the current menu.
 
     <p><strong>Maximax (risky behavior)</strong></p>
@@ -260,7 +207,7 @@
     \max_i \text{Payoff}(\text{Keep}, S_i) = \max\{25, 25\} = 25
     \]
 
-    The risky behavior (Maximax) chooses the option with the highest possible payoff:  
+    The risky behavior (Maximax) chooses the option with the highest possible payoff:
     Risky behavior recommends: Launch desserts.
 
     <p><strong>Summary by behavior type</strong></p>
@@ -272,27 +219,27 @@
   </section>
 
   <!-- SOLUTION 2 -->
-  <section id="solution2">
+  <section id="solution2" class="content-card">
     <h2>Solution 2 — Green Energy Production Mix</h2>
 
     <p><strong>Restated Problem</strong></p>
     <div class="example">
-      A renewable-energy firm evaluates three strategies: wind turbines, solar farms, and a hybrid system.  
-      Weather states: Windy, Sunny, Cloudy.  
+      A renewable-energy firm evaluates three strategies: wind turbines, solar farms, and a hybrid system.
+      Weather states: Windy, Sunny, Cloudy.
 
-      Profits (million USD):  
-      • Wind turbines → 85 (Windy), 40 (Sunny), 25 (Cloudy)  
-      • Solar farms → 30 (Windy), 90 (Sunny), 20 (Cloudy)  
+      Profits (million USD):
+      • Wind turbines → 85 (Windy), 40 (Sunny), 25 (Cloudy)
+      • Solar farms → 30 (Windy), 90 (Sunny), 20 (Cloudy)
       • Hybrid system → 60 (Windy), 60 (Sunny), 55 (Cloudy)
 
-      Probabilities: 0.30 (Windy), 0.50 (Sunny), 0.20 (Cloudy).  
+      Probabilities: 0.30 (Windy), 0.50 (Sunny), 0.20 (Cloudy).
 
       Question: Make a decision on the best strategy for safe behavior (Maximin), balanced behavior (Expected Value), and risky behavior (Maximax).
     </div>
 
     <p><strong>Payoff Table</strong></p>
 
-    <table>
+    <table class="data-table">
       <tr><th>Strategy</th><th>Windy</th><th>Sunny</th><th>Cloudy</th></tr>
       <tr><td>Wind turbines</td><td>85</td><td>40</td><td>25</td></tr>
       <tr><td>Solar farms</td><td>30</td><td>90</td><td>20</td></tr>
@@ -334,7 +281,7 @@
     \min_i \text{Payoff}(\text{Hybrid}, S_i) = \min\{60, 60, 55\} = 55
     \]
 
-    The safe behavior chooses the option with the highest worst payoff: 55 (Hybrid).  
+    The safe behavior chooses the option with the highest worst payoff: 55 (Hybrid).
     Safe behavior recommends: Hybrid system.
 
     <p><strong>Maximax (risky behavior)</strong></p>
@@ -353,7 +300,7 @@
     \max_i \text{Payoff}(\text{Hybrid}, S_i) = \max\{60, 60, 55\} = 60
     \]
 
-    The risky behavior chooses the largest best payoff: 90 (Solar).  
+    The risky behavior chooses the largest best payoff: 90 (Solar).
     Risky behavior recommends: Solar farms.
 
     <p><strong>Summary by behavior type</strong></p>
@@ -365,27 +312,27 @@
   </section>
 
   <!-- SOLUTION 3 -->
-  <section id="solution3">
+  <section id="solution3" class="content-card">
     <h2>Solution 3 — Global Shipping Network Design</h2>
 
     <p><strong>Restated Problem</strong></p>
     <div class="example">
-      A logistics firm must select between centralized, regional, and AI–driven shipping networks.  
+      A logistics firm must select between centralized, regional, and AI–driven shipping networks.
       Volatility states: Low, Medium, High.
 
-      Profits (million USD):  
-      • Centralized → 210 (Low), 130 (Medium), −40 (High)  
-      • Regional → 180 (Low), 160 (Medium), 70 (High)  
+      Profits (million USD):
+      • Centralized → 210 (Low), 130 (Medium), −40 (High)
+      • Regional → 180 (Low), 160 (Medium), 70 (High)
       • AI–Driven → 150 (Low), 175 (Medium), 140 (High)
 
-      Probabilities: 0.25 (Low), 0.45 (Medium), 0.30 (High).  
+      Probabilities: 0.25 (Low), 0.45 (Medium), 0.30 (High).
 
       Question: Make a decision on the best configuration for safe behavior (Maximin), balanced behavior (Expected Value), and risky behavior (Maximax).
     </div>
 
     <p><strong>Payoff Table</strong></p>
 
-    <table>
+    <table class="data-table">
       <tr><th>Configuration</th><th>Low volatility</th><th>Medium volatility</th><th>High volatility</th></tr>
       <tr><td>Centralized</td><td>210</td><td>130</td><td>-40</td></tr>
       <tr><td>Regional</td><td>180</td><td>160</td><td>70</td></tr>
@@ -427,7 +374,7 @@
     \min_i \text{Payoff}(\text{AI}, S_i) = \min\{150, 175, 140\} = 140
     \]
 
-    The safe behavior chooses the highest worst payoff: 140 (AI–Driven).  
+    The safe behavior chooses the highest worst payoff: 140 (AI–Driven).
     Safe behavior recommends: AI–Driven network.
 
     <p><strong>Maximax (risky behavior)</strong></p>
@@ -446,7 +393,7 @@
     \max_i \text{Payoff}(\text{AI}, S_i) = \max\{150, 175, 140\} = 175
     \]
 
-    The risky behavior chooses the largest best payoff: 210 (Centralized).  
+    The risky behavior chooses the largest best payoff: 210 (Centralized).
     Risky behavior recommends: Centralized network.
 
     <p><strong>Summary by behavior type</strong></p>
