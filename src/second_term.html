@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Second Term | Analysis of Decisions</title>
+    <title>Second Term | Decision Rules with Data</title>
     <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" async></script>
   <style>
     body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; background: #f8fafc; color: #0f172a; }
@@ -28,7 +28,7 @@
   <header>
     <a href="../index.html">&larr; Back to main</a>
     <h1>Analysis of Decisions</h1>
-    <p>Decision-making frameworks with and without probabilities, emphasizing expected value and portfolio thinking.</p>
+    <p>Decision-making with data, payoff tables, and clear rules such as Expected Monetary Value (EMV), Maximin, and Maximax.</p>
   </header>
 
   <main>
@@ -50,12 +50,9 @@
         <li>Describes the way a problem can be formulated for optimal decision making.</li>
         <li>Interprets the parts of a problem such as decision alternatives, fortuitous events, consequences, and states of nature.</li>
         <li>Builds a payoff table from a description of the problem.</li>
-        <li>Explains how a decision-making problem without probabilities works (criterion maximax).</li>
-        <li>Summarizes how a decision-making problem without probabilities works (criterion maximin).</li>
-        <li>Develops decision-making strategies to address problems with probabilities and maximum opportunity criterion.</li>
-        <li>Uses probabilities and expected value to work on a decision-making problem.</li>
-        <li>Compares the Bayes decision rule for decision making without experimentation and the Bayes, maximin and minimax methods.</li>
-        <li>Establishes the tree diagram for a decision-making problem.</li>
+        <li>Explains how decision-making without probabilities works (criteria: maximax and maximin).</li>
+        <li>Develops decision-making strategies to address problems with probabilities using EMV.</li>
+        <li>Compares EMV, maximin, and maximax and explains when their recommendations diverge.</li>
         <li>Evaluates all possibilities in a decision-making problem using the different strategies presented so far.</li>
       </ol>
     </section>
@@ -71,44 +68,49 @@
     </section>
 
     <section>
-      <h2>Decision Trees & EMV</h2>
-      <p>Decision trees show decisions (squares) and chance nodes (circles). The expected monetary value (EMV) at a chance node is the probability-weighted average of payoffs.</p>
+      <h2>Decision Rules: EMV, Maximin, and Maximax</h2>
+      <p>Use a payoff table to compare options across the same states of nature. EMV multiplies each payoff by its probability and adds the results. Maximin focuses on the strongest worst-case payoff, while Maximax focuses on the highest possible payoff.</p>
       <div class="example">
-        <strong>Example:</strong> Choose between a safe project ($45k guaranteed) and a risky project with three demand levels. The payoff table summarizes payoffs (in $000s) and state probabilities:
+        <strong>Example with diverging recommendations:</strong> A firm has three technology strategies under three demand scenarios (payoffs in $000s).
         <table style="width:100%; margin: 10px 0; border-collapse: collapse; text-align: center;">
           <thead>
             <tr style="background:#ccfbf1;">
               <th style="border: 1px solid #94a3b8; padding: 6px;">State of Nature</th>
               <th style="border: 1px solid #94a3b8; padding: 6px;">Probability</th>
-              <th style="border: 1px solid #94a3b8; padding: 6px;">Safe Project</th>
-              <th style="border: 1px solid #94a3b8; padding: 6px;">Risky Project</th>
+              <th style="border: 1px solid #94a3b8; padding: 6px;">Innovate (A)</th>
+              <th style="border: 1px solid #94a3b8; padding: 6px;">Improve (B)</th>
+              <th style="border: 1px solid #94a3b8; padding: 6px;">License (C)</th>
             </tr>
           </thead>
           <tbody>
             <tr>
               <td style="border: 1px solid #cbd5e1; padding: 6px;">High demand</td>
               <td style="border: 1px solid #cbd5e1; padding: 6px;">0.30</td>
-              <td style="border: 1px solid #cbd5e1; padding: 6px;">45</td>
               <td style="border: 1px solid #cbd5e1; padding: 6px;">150</td>
+              <td style="border: 1px solid #cbd5e1; padding: 6px;">110</td>
+              <td style="border: 1px solid #cbd5e1; padding: 6px;">70</td>
             </tr>
             <tr>
               <td style="border: 1px solid #cbd5e1; padding: 6px;">Moderate demand</td>
-              <td style="border: 1px solid #cbd5e1; padding: 6px;">0.50</td>
-              <td style="border: 1px solid #cbd5e1; padding: 6px;">45</td>
+              <td style="border: 1px solid #cbd5e1; padding: 6px;">0.40</td>
+              <td style="border: 1px solid #cbd5e1; padding: 6px;">80</td>
+              <td style="border: 1px solid #cbd5e1; padding: 6px;">90</td>
               <td style="border: 1px solid #cbd5e1; padding: 6px;">70</td>
             </tr>
             <tr>
               <td style="border: 1px solid #cbd5e1; padding: 6px;">Low demand</td>
-              <td style="border: 1px solid #cbd5e1; padding: 6px;">0.20</td>
-              <td style="border: 1px solid #cbd5e1; padding: 6px;">45</td>
-              <td style="border: 1px solid #cbd5e1; padding: 6px;">5</td>
+              <td style="border: 1px solid #cbd5e1; padding: 6px;">0.30</td>
+              <td style="border: 1px solid #cbd5e1; padding: 6px;">-20</td>
+              <td style="border: 1px solid #cbd5e1; padding: 6px;">40</td>
+              <td style="border: 1px solid #cbd5e1; padding: 6px;">60</td>
             </tr>
           </tbody>
         </table>
-        <div style="display: flex; flex-direction: column; gap: 8px; align-items: center;">
-          <span style="white-space: nowrap; font-weight: 600;">\(\text{EMV}_{\text{risky}} = (0.30 \times 150) + (0.50 \times 70) + (0.20 \times 5) = 81\text{k}\)</span>
-          <span style="white-space: nowrap; font-weight: 600;">\(\text{EMV}_{\text{safe}} = 45\text{k}\)</span>
-          <span>By EMV, the risky project (81k) dominates the safe project (45k). Maximax also selects the risky project because its best-case payoff (150k) exceeds the safe project's best-case payoff (45k).</span>
+        <div style="display: flex; flex-direction: column; gap: 8px;">
+          <span><strong>EMV calculations:</strong> \(\text{EMV}_A = (0.30 \times 150) + (0.40 \times 80) + (0.30 \times -20) = 71\text{k}\); \(\text{EMV}_B = (0.30 \times 110) + (0.40 \times 90) + (0.30 \times 40) = 81\text{k}\); \(\text{EMV}_C = (0.30 \times 70) + (0.40 \times 70) + (0.30 \times 60) = 67\text{k}\). EMV recommends <em>Improve (B)</em>.</span>
+          <span><strong>Maximin:</strong> Worst payoffs are A = -20k, B = 40k, C = 60k. The highest worst case is 60k, so Maximin recommends <em>License (C)</em> for maximum safety.</span>
+          <span><strong>Maximax:</strong> Best payoffs are A = 150k, B = 110k, C = 70k. The largest best case is 150k, so Maximax recommends <em>Innovate (A)</em>.</span>
+          <span>Because the three rules weigh risk differently, they point to three distinct choices even though they use the same payoff table.</span>
         </div>
       </div>
     </section>
@@ -132,7 +134,7 @@
         </li>
         <li class="resource-card">
           <h3><a href="https://correosanbartoloedu-my.sharepoint.com/:b:/g/personal/nicolas_lopez_sanbartolo_edu_co/IQD2cqp8sSyyQY6U3ZYKjQrKAbmoZzw5XlJMtZI0u1eMKzA?e=R7Z87E" target="_blank" rel="noopener noreferrer">OneDrive Handout</a></h3>
-          <p>Downloadable reference with guided decision tree practice problems.</p>
+          <p>Downloadable reference with guided payoff-table practice using EMV, maximin, and maximax.</p>
         </li>
         <li class="resource-card">
           <h3><a href="https://www.canva.com/design/DAG5zHk9fWA/nqhDaXWrGbJhxqI-i-gYsw/edit?utm_content=DAG5zHk9fWA&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton" target="_blank" rel="noopener noreferrer">Expected Value Introduction (Canva)</a></h3>
