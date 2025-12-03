@@ -4,35 +4,20 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>First Term | Discrete Probability Distributions</title>
-  <style>
-    body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; background: #f8fafc; color: #0f172a; }
-    header { background: #1e3a8a; color: #fff; padding: 26px 20px; }
-    header a { color: #bfdbfe; text-decoration: none; font-weight: 600; }
-    main { max-width: 900px; margin: 0 auto; padding: 26px 20px 50px; }
-    h1 { margin-top: 8px; }
-    section { background: #fff; border-radius: 14px; padding: 18px 16px; box-shadow: 0 8px 20px rgba(0,0,0,0.08); border: 1px solid #e2e8f0; margin-bottom: 16px; }
-    h2 { color: #1e3a8a; margin-top: 0; }
-    ul { margin: 10px 0 0 20px; }
-    .example { background: #eff6ff; padding: 12px; border-radius: 10px; border: 1px solid #bfdbfe; }
-    .support-section h2 { display: flex; align-items: center; gap: 8px; }
-    .support-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 12px; padding: 0; margin: 10px 0 0; list-style: none; }
-    .resource-card { border: 1px solid #e2e8f0; border-radius: 12px; padding: 14px; background: linear-gradient(135deg, #f8fbff, #eef2ff); box-shadow: 0 8px 20px rgba(0,0,0,0.06); }
-    .resource-card h3 { margin: 0 0 6px; color: #1e3a8a; font-size: 1.05rem; }
-    .resource-card p { margin: 0; color: #334155; }
-    .resource-card a { color: #1d4ed8; text-decoration: none; font-weight: 600; }
-    .resource-card a:hover { text-decoration: underline; }
-    .empty-support { margin: 6px 0 0; color: #475569; background: #f8fafc; border: 1px dashed #cbd5e1; border-radius: 10px; padding: 10px 12px; }
-  </style>
+  <link rel="stylesheet" href="styles/base.css">
+  <link rel="stylesheet" href="styles/themes.css">
+  <link rel="stylesheet" href="styles/layout.css">
+  <link rel="stylesheet" href="styles/components.css">
 </head>
-<body>
-  <header>
+<body class="theme-first">
+  <header class="site-header">
     <a href="../index.html">&larr; Back to main</a>
     <h1>Discrete Probability Distributions</h1>
     <p>Concepts, distributions, and criteria for discrete random variables and introductory investment decisions.</p>
   </header>
 
-  <main>
-    <section>
+  <main class="term-layout">
+    <section class="content-card">
       <h2>Conceptual Referents</h2>
       <ul>
         <li>Random variable</li>
@@ -49,7 +34,7 @@
       </ul>
     </section>
 
-    <section>
+    <section class="content-card">
       <h2>Achievement Criteria</h2>
       <ol>
         <li>Describes random variables considering their characteristics.</li>
@@ -65,7 +50,7 @@
       </ol>
     </section>
 
-    <section>
+    <section class="content-card">
       <h2>Core Distributions</h2>
       <ul>
         <li><strong>Bernoulli(p):</strong> Single trial with success probability <em>p</em>; mean <em>p</em>, variance <em>p(1-p)</em>.</li>
@@ -75,15 +60,15 @@
       </ul>
     </section>
 
-    <section>
-      <h2>Expectation & Variance</h2>
+    <section class="content-card">
+      <h2>Expectation &amp; Variance</h2>
       <p>For a discrete random variable X with PMF f(x), expectation is <em>E[X] = Σ x·f(x)</em> and variance is <em>Var(X) = E[X^2] - (E[X])^2</em>.</p>
       <div class="example">
         <strong>Example:</strong> For a fair die, E[X] = (1+2+3+4+5+6)/6 = 3.5 and Var(X) = E[X^2] - (E[X])^2 = (1^2+...+6^2)/6 − 3.5^2 ≈ 2.92.
       </div>
     </section>
 
-    <section>
+    <section class="content-card">
       <h2>Common Uses</h2>
       <ul>
         <li>Quality control (binomial defects per batch).</li>
@@ -92,7 +77,7 @@
       </ul>
     </section>
 
-    <section class="support-section">
+    <section class="content-card support-section">
       <h2>Support Materials</h2>
       <div class="empty-support">Support materials for this term will appear here as they are added.</div>
     </section>
