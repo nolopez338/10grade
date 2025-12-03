@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Second Term | Decision Rules with Data</title>
-    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" async></script>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Second Term | Decision Rules with Data</title>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" async></script>
+
   <style>
     body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; background: #f8fafc; color: #0f172a; }
     header { background: #0f766e; color: #fff; padding: 26px 20px; }
@@ -15,137 +16,297 @@
     h2 { color: #0f766e; margin-top: 0; }
     ul { margin: 10px 0 0 20px; }
     .example { background: #ecfeff; padding: 12px; border-radius: 10px; border: 1px solid #99f6e4; }
-    .support-section h2 { display: flex; align-items: center; gap: 8px; }
     .support-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 12px; padding: 0; margin: 10px 0 0; list-style: none; }
     .resource-card { border: 1px solid #e2e8f0; border-radius: 12px; padding: 14px; background: linear-gradient(135deg, #f8fbff, #ecfeff); box-shadow: 0 8px 20px rgba(0,0,0,0.06); }
     .resource-card h3 { margin: 0 0 6px; color: #0f766e; font-size: 1.05rem; }
     .resource-card p { margin: 0; color: #334155; }
     .resource-card a { color: #0ea5e9; text-decoration: none; font-weight: 600; }
     .resource-card a:hover { text-decoration: underline; }
+    html { scroll-behavior: smooth; }
   </style>
 </head>
+
 <body>
-  <header>
-    <a href="../index.html">&larr; Back to main</a>
-    <h1>Analysis of Decisions</h1>
-    <p>Decision-making with data, payoff tables, and clear rules such as Expected Monetary Value (EMV), Maximin, and Maximax.</p>
-  </header>
 
-  <main>
-    <section>
-      <h2>Conceptual Referents</h2>
-      <ul>
-        <li>Random variable</li>
-        <li>Probability distributions</li>
-        <li>Subjective probability</li>
-        <li>Mean and variance of discrete distributions</li>
-        <li>Investment portfolio</li>
-        <li>Expected value</li>
-      </ul>
-    </section>
+<header>
+  <a href="../index.html">&larr; Back to main</a>
+  <h1>Analysis of Decisions</h1>
+  <p>Decision-making with data, payoff tables, and rules such as EMV, Maximin, and Maximax.</p>
+</header>
 
-    <section>
-      <h2>Achievement Criteria</h2>
-      <ol>
-        <li>Describes the way a problem can be formulated for optimal decision making.</li>
-        <li>Interprets the parts of a problem such as decision alternatives, fortuitous events, consequences, and states of nature.</li>
-        <li>Builds a payoff table from a description of the problem.</li>
-        <li>Explains how decision-making without probabilities works (criteria: maximax and maximin).</li>
-        <li>Develops decision-making strategies to address problems with probabilities using EMV.</li>
-        <li>Compares EMV, maximin, and maximax and explains when their recommendations diverge.</li>
-        <li>Evaluates all possibilities in a decision-making problem using the different strategies presented so far.</li>
-      </ol>
-    </section>
+<main>
 
-    <section>
-      <h2>Decision Process</h2>
-      <ul>
-        <li><strong>Define alternatives:</strong> List feasible actions.</li>
-        <li><strong>Identify states:</strong> Outcomes of nature that affect payoffs.</li>
-        <li><strong>Assign probabilities:</strong> Based on data or expert judgment.</li>
-        <li><strong>Evaluate:</strong> Compute expected values or utilities, then choose.</li>
-      </ul>
-    </section>
+  <!-- TABLE OF CONTENTS -->
+  <section id="table-of-contents">
+    <h2>Table of Contents</h2>
+    <ul>
+      <li><a href="#conceptual-referents">Conceptual Referents</a></li>
+      <li><a href="#achievement-criteria">Achievement Criteria</a></li>
+      <li><a href="#decision-process">Decision Process</a></li>
+      <li><a href="#formulas-section">Formulas Used in This Topic</a></li>
+      <li><a href="#example-1">Example 1</a></li>
+      <li><a href="#support-materials">Support Materials</a></li>
+    </ul>
+  </section>
 
-    <section>
-      <h2>Decision Rules: EMV, Maximin, and Maximax</h2>
-      <p>Use a payoff table to compare options across the same states of nature. EMV multiplies each payoff by its probability and adds the results. Maximin focuses on the strongest worst-case payoff, while Maximax focuses on the highest possible payoff.</p>
-      <div class="example">
-        <strong>Example with diverging recommendations:</strong> A firm has three technology strategies under three demand scenarios (payoffs in $000s).
-        <table style="width:100%; margin: 10px 0; border-collapse: collapse; text-align: center;">
-          <thead>
-            <tr style="background:#ccfbf1;">
-              <th style="border: 1px solid #94a3b8; padding: 6px;">State of Nature</th>
-              <th style="border: 1px solid #94a3b8; padding: 6px;">Probability</th>
-              <th style="border: 1px solid #94a3b8; padding: 6px;">Innovate (A)</th>
-              <th style="border: 1px solid #94a3b8; padding: 6px;">Improve (B)</th>
-              <th style="border: 1px solid #94a3b8; padding: 6px;">License (C)</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td style="border: 1px solid #cbd5e1; padding: 6px;">High demand</td>
-              <td style="border: 1px solid #cbd5e1; padding: 6px;">0.30</td>
-              <td style="border: 1px solid #cbd5e1; padding: 6px;">150</td>
-              <td style="border: 1px solid #cbd5e1; padding: 6px;">110</td>
-              <td style="border: 1px solid #cbd5e1; padding: 6px;">70</td>
-            </tr>
-            <tr>
-              <td style="border: 1px solid #cbd5e1; padding: 6px;">Moderate demand</td>
-              <td style="border: 1px solid #cbd5e1; padding: 6px;">0.40</td>
-              <td style="border: 1px solid #cbd5e1; padding: 6px;">80</td>
-              <td style="border: 1px solid #cbd5e1; padding: 6px;">90</td>
-              <td style="border: 1px solid #cbd5e1; padding: 6px;">70</td>
-            </tr>
-            <tr>
-              <td style="border: 1px solid #cbd5e1; padding: 6px;">Low demand</td>
-              <td style="border: 1px solid #cbd5e1; padding: 6px;">0.30</td>
-              <td style="border: 1px solid #cbd5e1; padding: 6px;">-20</td>
-              <td style="border: 1px solid #cbd5e1; padding: 6px;">40</td>
-              <td style="border: 1px solid #cbd5e1; padding: 6px;">60</td>
-            </tr>
-          </tbody>
-        </table>
-        <div style="display: flex; flex-direction: column; gap: 8px;">
-          <span><strong>EMV calculations:</strong> \(\text{EMV}_A = (0.30 \times 150) + (0.40 \times 80) + (0.30 \times -20) = 71\text{k}\); \(\text{EMV}_B = (0.30 \times 110) + (0.40 \times 90) + (0.30 \times 40) = 81\text{k}\); \(\text{EMV}_C = (0.30 \times 70) + (0.40 \times 70) + (0.30 \times 60) = 67\text{k}\). EMV recommends <em>Improve (B)</em>.</span>
-          <span><strong>Maximin:</strong> Worst payoffs are A = -20k, B = 40k, C = 60k. The highest worst case is 60k, so Maximin recommends <em>License (C)</em> for maximum safety.</span>
-          <span><strong>Maximax:</strong> Best payoffs are A = 150k, B = 110k, C = 70k. The largest best case is 150k, so Maximax recommends <em>Innovate (A)</em>.</span>
-          <span>Because the three rules weigh risk differently, they point to three distinct choices even though they use the same payoff table.</span>
-        </div>
+  <!-- CONCEPTUAL REFERENTS -->
+  <section id="conceptual-referents">
+    <h2>Conceptual Referents</h2>
+    <ul>
+      <li>Random variable</li>
+      <li>Probability distributions</li>
+      <li>Subjective probability</li>
+      <li>Mean and variance of discrete distributions</li>
+      <li>Investment portfolio</li>
+      <li>Expected value</li>
+    </ul>
+  </section>
+
+  <!-- ACHIEVEMENT CRITERIA -->
+  <section id="achievement-criteria">
+    <h2>Achievement Criteria</h2>
+    <ol>
+      <li>Describes the way a problem can be formulated for optimal decision making.</li>
+      <li>Interprets decision alternatives, events, consequences, and states of nature.</li>
+      <li>Builds a payoff table from a description of the problem.</li>
+      <li>Explains the maximax criterion for decision making without probabilities.</li>
+      <li>Summarizes the maximin criterion for decision making without probabilities.</li>
+      <li>Develops decision-making strategies using probabilities and the maximum opportunity criterion.</li>
+      <li>Uses probabilities and expected value to analyze a decision-making problem.</li>
+      <li>Compares Bayes, Maximin, and Minimax strategies.</li>
+      <li>Establishes the tree diagram for a decision-making problem.</li>
+      <li>Evaluates all possibilities in a decision-making problem using the strategies presented.</li>
+    </ol>
+  </section>
+
+  <!-- DECISION PROCESS -->
+  <section id="decision-process">
+    <h2>Decision Process</h2>
+    <ul>
+      <li><strong>Define alternatives:</strong> List feasible actions.</li>
+      <li><strong>Identify states:</strong> External outcomes affecting payoffs.</li>
+      <li><strong>Assign probabilities:</strong> Based on data or expert judgment.</li>
+      <li><strong>Evaluate:</strong> Compute expected values or apply rules.</li>
+    </ul>
+  </section>
+
+  <!-- FORMULAS -->
+  <section id="formulas-section">
+    <h2>Formulas Used in This Topic</h2>
+
+    <div class="example" style="display: grid; gap: 14px;">
+
+      <!-- 1 -->
+      <p><strong>1. Expected Value of a Discrete Random Variable</strong></p>
+      <p>
+        \[
+        E[X] = \sum_{i=1}^{n} x_i p_i
+        \]
+        <strong>Where:</strong><br>
+        • \(X\): random variable representing uncertain outcomes.<br>
+        • \(x_i\): the i-th possible outcome of \(X\).<br>
+        • \(p_i\): probability associated with outcome \(x_i\).<br>
+        • \(n\): number of possible outcomes.<br>
+        <strong>Context:</strong> Represents the long-run average outcome under repeated identical conditions.
+      </p>
+
+      <!-- 2 -->
+      <p><strong>2. Variance of a Discrete Random Variable</strong></p>
+      <p>
+        \[
+        \mathrm{Var}(X) = \sum_{i=1}^{n} (x_i - E[X])^2 p_i
+        \]
+        <strong>Where:</strong><br>
+        • \(x_i\): possible outcome.<br>
+        • \(E[X]\): expected value of the distribution.<br>
+        • \(p_i\): probability of outcome \(x_i\).<br>
+        • \(n\): number of outcomes.<br>
+        <strong>Context:</strong> Measures dispersion and quantifies risk or volatility.
+      </p>
+
+      <!-- 3 -->
+      <p><strong>3. Expected Monetary Value (EMV)</strong></p>
+      <p>
+        \[
+        EMV(A_j) = \sum_{i=1}^{m} p_i \,\text{Payoff}(A_j,S_i)
+        \]
+        <strong>Where:</strong><br>
+        • \(A_j\): decision alternative (e.g., a strategy).<br>
+        • \(S_i\): state of nature (future scenario).<br>
+        • \(\text{Payoff}(A_j,S_i)\): monetary result of \(A_j\) under state \(S_i\).<br>
+        • \(p_i\): probability of state \(S_i\).<br>
+        • \(m\): number of states of nature.<br>
+        <strong>Context:</strong> Represents the average monetary performance of a strategy under uncertainty.
+      </p>
+
+      <!-- 4 -->
+      <p><strong>4. Maximin Criterion</strong></p>
+      <p>
+        \[
+        \text{Maximin}(A_j) = \max_j \left( \min_i \,\text{Payoff}(A_j,S_i) \right)
+        \]
+        <strong>Where:</strong><br>
+        • \(A_j\): decision alternatives.<br>
+        • \(S_i\): states of nature.<br>
+        • \(\min_i \text{Payoff}(A_j,S_i)\): worst-case payoff of \(A_j\).<br>
+        • Outer max selects the highest worst-case result.<br>
+        <strong>Context:</strong> Represents a conservative decision maker seeking safety.
+      </p>
+
+      <!-- 5 -->
+      <p><strong>5. Maximax Criterion</strong></p>
+      <p>
+        \[
+        \text{Maximax}(A_j) = \max_j \left( \max_i \,\text{Payoff}(A_j,S_i) \right)
+        \]
+        <strong>Where:</strong><br>
+        • Inner max: best payoff each alternative can achieve.<br>
+        • Outer max: selects the alternative with the largest best-case payoff.<br>
+        <strong>Context:</strong> Represents an optimistic decision maker seeking maximum possible gain.
+      </p>
+
+    </div>
+  </section>
+
+  <!-- EXAMPLE 1 -->
+  <section id="example-1">
+    <h2>Example 1</h2>
+    <p>Use a payoff table to compare options across the same states of nature. EMV multiplies each payoff by its probability and adds the results. Maximax focuses on the highest possible payoff, while Maximin focuses on the strongest worst-case payoff.</p>
+
+    <div class="example">
+      <strong>Example with diverging recommendations:</strong>
+      A firm has three technology strategies under three demand scenarios (payoffs in $000s).
+
+      <table style="width:100%; margin: 10px 0; border-collapse: collapse; text-align: center;">
+        <thead>
+          <tr style="background:#ccfbf1;">
+            <th style="border: 1px solid #94a3b8; padding: 6px;">State of Nature</th>
+            <th style="border: 1px solid #94a3b8; padding: 6px;">Probability</th>
+            <th style="border: 1px solid #94a3b8; padding: 6px;">Innovate (A)</th>
+            <th style="border: 1px solid #94a3b8; padding: 6px;">Improve (B)</th>
+            <th style="border: 1px solid #94a3b8; padding: 6px;">License (C)</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr>
+            <td style="border: 1px solid #cbd5e1; padding: 6px;">High demand</td>
+            <td style="border: 1px solid #cbd5e1; padding: 6px;">0.30</td>
+            <td style="border: 1px solid #cbd5e1; padding: 6px;">150</td>
+            <td style="border: 1px solid #cbd5e1; padding: 6px;">110</td>
+            <td style="border: 1px solid #cbd5e1; padding: 6px;">70</td>
+          </tr>
+          <tr>
+            <td style="border: 1px solid #cbd5e1; padding: 6px;">Moderate demand</td>
+            <td style="border: 1px solid #cbd5e1; padding: 6px;">0.40</td>
+            <td style="border: 1px solid #cbd5e1; padding: 6px;">80</td>
+            <td style="border: 1px solid #cbd5e1; padding: 6px;">90</td>
+            <td style="border: 1px solid #cbd5e1; padding: 6px;">70</td>
+          </tr>
+          <tr>
+            <td style="border: 1px solid #cbd5e1; padding: 6px;">Low demand</td>
+            <td style="border: 1px solid #cbd5e1; padding: 6px;">0.30</td>
+            <td style="border: 1px solid #cbd5e1; padding: 6px;">-20</td>
+            <td style="border: 1px solid #cbd5e1; padding: 6px;">40</td>
+            <td style="border: 1px solid #cbd5e1; padding: 6px;">60</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div style="display: flex; flex-direction: column; gap: 14px;">
+
+        <!-- EMV -->
+        <span><strong>EMV calculations:</strong>
+          \[
+          EMV_A = 0.30(150) + 0.40(80) + 0.30(-20) = 71k
+          \]
+          \[
+          EMV_B = 0.30(110) + 0.40(90) + 0.30(40) = 81k
+          \]
+          \[
+          EMV_C = 0.30(70) + 0.40(70) + 0.30(60) = 67k
+          \]
+          EMV recommends <em>Improve (B)</em>.
+        </span>
+
+        <!-- MAXIMAX FIRST -->
+        <span><strong>Maximax (step-by-step reasoning):</strong><br>
+          The Maximax rule selects the option with the highest possible payoff.
+          <br><br>
+          <strong>Step 1: Identify the best payoff for each strategy.</strong>
+          \[
+          \begin{aligned}
+          \max_i \text{Payoff}(A, S_i) &= 150k\\
+          \max_i \text{Payoff}(B, S_i) &= 110k\\
+          \max_i \text{Payoff}(C, S_i) &= 70k
+          \end{aligned}
+          \]
+          <strong>Step 2: Choose the largest of these best values.</strong>
+          \[
+          \max\{150, 110, 70\} = 150k
+          \]
+          <strong>Conclusion:</strong> Maximax recommends <em>Innovate (A)</em>.
+        </span>
+
+        <!-- MAXIMIN SECOND -->
+        <span><strong>Maximin (step-by-step reasoning):</strong><br>
+          The Maximin rule selects the option with the strongest worst-case payoff.
+          <br><br>
+          <strong>Step 1: Identify the worst payoff for each strategy.</strong>
+          \[
+          \begin{aligned}
+          \min_i \text{Payoff}(A, S_i) &= -20k\\
+          \min_i \text{Payoff}(B, S_i) &= 40k\\
+          \min_i \text{Payoff}(C, S_i) &= 60k
+          \end{aligned}
+          \]
+          <strong>Step 2: Choose the highest of these worst values.</strong>
+          \[
+          \max\{-20, 40, 60\} = 60k
+          \]
+          <strong>Conclusion:</strong> Maximin recommends <em>License (C)</em>.
+        </span>
+
+        <span>Because the three rules weigh risk differently, they point to different choices even though they use the same payoff table.</span>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <section>
-      <h2>Risk & Utility</h2>
-      <ul>
-        <li><strong>Risk-neutral:</strong> Maximize EMV.</li>
-        <li><strong>Risk-averse:</strong> Use concave utility (e.g., U(x)=√x) to value outcomes.</li>
-        <li><strong>Risk-seeking:</strong> Use convex utility to emphasize large gains.</li>
-      </ul>
-      <p>Sensitivity analysis tests how decisions change when probabilities or payoffs shift.</p>
-    </section>
 
-    <section class="support-section">
-      <h2>Support Materials</h2>
-      <ul class="support-grid">
-        <li class="resource-card">
-          <h3><a href="pages/expected_value.html">Expected Value (Web Page)</a></h3>
-          <p>Interactive explanation and examples that connect expected value to decision criteria.</p>
-        </li>
-        <li class="resource-card">
-          <h3><a href="https://correosanbartoloedu-my.sharepoint.com/:b:/g/personal/nicolas_lopez_sanbartolo_edu_co/IQD2cqp8sSyyQY6U3ZYKjQrKAbmoZzw5XlJMtZI0u1eMKzA?e=R7Z87E" target="_blank" rel="noopener noreferrer">OneDrive Handout</a></h3>
-          <p>Downloadable reference with guided payoff-table practice using EMV, maximin, and maximax.</p>
-        </li>
-        <li class="resource-card">
-          <h3><a href="https://www.canva.com/design/DAG5zHk9fWA/nqhDaXWrGbJhxqI-i-gYsw/edit?utm_content=DAG5zHk9fWA&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton" target="_blank" rel="noopener noreferrer">Expected Value Introduction (Canva)</a></h3>
-          <p>Visual guide explaining how expected value helps interpret uncertain financial outcomes, estimate average long-term returns, and compare alternatives when making informed economic decisions.</p>
-        </li>
-        <li class="resource-card">
-          <h3><a href="https://correosanbartoloedu-my.sharepoint.com/:b:/g/personal/nicolas_lopez_sanbartolo_edu_co/IQDJnuMa07eSS7UFP7SCyaq-AR9HLejlGq-bUxdYBbwv_Ag?e=wZ8dVs" target="_blank" rel="noopener noreferrer">Practice Activity 1</a></h3>
-          <p>Printable practice activity to apply decision-making concepts with structured exercises.</p>
-        </li>
-      </ul>
-    </section>
-  </main>
+  <!-- SUPPORT MATERIALS -->
+  <section id="support-materials">
+    <h2>Support Materials</h2>
+    <ul class="support-grid">
+
+      <li class="resource-card">
+        <h3><a href="pages/expected_value.html">Expected Value (Web Page)</a></h3>
+        <p>Interactive explanation and examples connected to decision criteria.</p>
+      </li>
+
+      <li class="resource-card">
+        <h3><a href="https://correosanbartoloedu-my.sharepoint.com/:b:/g/personal/nicolas_lopez_sanbartolo_edu_co/IQD2cqp8sSyyQY6U3ZYKjQrKAbmoZzw5XlJMtZI0u1eMKzA?e=R7Z87E" target="_blank">OneDrive Handout</a></h3>
+        <p>Printable reference on payoff tables and decision rules.</p>
+      </li>
+
+      <li class="resource-card">
+        <h3><a href="https://www.canva.com/design/DAG5zHk9fWA/nqhDaXWrGbJhxqI-i-gYsw/edit" target="_blank">Expected Value (Canva)</a></h3>
+        <p>Visual introduction to expected value and long-term reasoning.</p>
+      </li>
+
+      <li class="resource-card">
+        <h3><a href="https://correosanbartoloedu-my.sharepoint.com/:b:/g/personal/nicolas_lopez_sanbartolo_edu_co/IQDJnuMa07eSS7UFP7SCyaq-AR9HLejlGq-bUxdYBbwv_Ag?e=wZ8dVs" target="_blank">Practice Activity 1</a></h3>
+        <p>Exercises to practice EMV, Maximax, and Maximin.</p>
+      </li>
+
+      <li class="resource-card">
+        <h3><a href="pages/practice_activity1.html">Practice activity 1</a></h3>
+        <p>Practice activity C1-C5</p>
+      </li>
+
+    </ul>
+  </section>
+
+</main>
+
 </body>
 </html>
